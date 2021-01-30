@@ -27,6 +27,8 @@ public class HomeFragment extends Fragment {
     private EditText etNumero;
     private Button btActualiza;
     private TextView tvActual;
+    private Integer ValorEnBD;
+
     //Working with FirebaseDatabase
     private FirebaseDatabase database; //Db instances
     private DatabaseReference myRef; //Element Reference
@@ -40,7 +42,7 @@ public class HomeFragment extends Fragment {
         btActualiza = root.findViewById(R.id.btActualiza);
         tvActual = root.findViewById(R.id.tvNumeroActual);
 
-        //Create the conexion instance with Firebase.
+        //Create the connection instance with Firebase.
         //Get the db instance, get the element name
         database = FirebaseDatabase.getInstance();
         myRef = database.getReference("numero");
@@ -49,7 +51,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String valor = snapshot.getValue(String.class);
-                tvActual.setText(valor);
+                ValorEnBD = Integer.parseInt(valor);
             }
 
             @Override
@@ -64,7 +66,16 @@ public class HomeFragment extends Fragment {
             public void onClick(View v) {
                 //Get number value
                 String strNumero = etNumero.getText().toString();
-                myRef.setValue(strNumero);
+                Integer num = Integer.parseInt(strNumero);
+                if (num < 1 || num > 100){
+                    tvActual.setText("El valor ingresado tiene que ser mayor que 1 y menor que 100");
+                }else{
+                    if (ValorEnBD!=num){
+                        tvActual.setText("OH NO, SIGUE PARTICIPANDO");
+                    }else{
+                        tvActual.setText("GANASTE, HAS ACERTADO EL NUMERO");
+                    }
+                }
             }
         });
 

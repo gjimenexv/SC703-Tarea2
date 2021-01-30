@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Taller</string>
+    <string name="app_name">Tarea 2</string>
     <string name="tvCorre">Correo</string>
     <string name="tvClave">Contraseña</string>
     <string name="btLogin">Ingresar</string>
@@ -14,8 +14,8 @@
     <string name="action_settings">Settings</string>
 
     <string name="menu_home">RealTime DB</string>
-    <string name="tvNumero">Escriba un número</string>
-    <string name="btActualiza">Actualizar</string>
+    <string name="tvNumero">Adivine el numero. (Pista: Entre 1 y 100)</string>
+    <string name="btActualiza">Adivinar Numero</string>
     <string name="tvActual">El número actual es:</string>
 
 

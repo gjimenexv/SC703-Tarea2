@@ -31,12 +31,6 @@
         android:text="@string/btActualiza" />
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/tvActual"
-        android:textAlignment="center" />
-
-    <TextView
         android:id="@+id/tvNumeroActual"
         android:layout_width="match_parent"
         android:layout_height="32dp"
